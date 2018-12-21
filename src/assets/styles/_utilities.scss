@@ -1,0 +1,49 @@
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+$text-align-val-list: left,
+right,
+center;
+@each $current-text-align-val-list in $text-align-val-list {
+    $i: index($text-align-val-list, $current-text-align-val-list);
+    .text-align-#{$current-text-align-val-list} {
+        text-align: #{$current-text-align-val-list};
+    }
+}
+
+$top-list: 0;
+@each $current-top-val in $top-list {
+    $i: index($top-list, $current-top-val);
+    .top-#{$current-top-val} {
+        top: #{$current-top-val}px;
+    }
+}
+
+$right-list: 0;
+@each $current-right-val in $right-list {
+    $i: index($right-list, $current-right-val);
+    .right-#{$current-right-val} {
+        right: #{$current-right-val}px;
+    }
+}
+
+$margin-top-list: 10;
+@each $current-margin-top-val in $margin-top-list {
+    $i: index($margin-top-list, $current-margin-top-val);
+    .mt-#{$current-margin-top-val} {
+        margin-top: #{$current-margin-top-val}px;
+    }
+}
