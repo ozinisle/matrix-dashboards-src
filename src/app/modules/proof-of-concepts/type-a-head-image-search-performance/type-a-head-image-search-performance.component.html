@@ -1,0 +1,57 @@
+<section class="app-type-a-head-image-search-performance">
+
+  <div class="sticky">
+    A total of {{totalImageCount}} images are loaded into the page
+  </div>
+
+  <div class="col s12 tahimsp-title-container center-align">
+    <img mat-card-image class='tahimsp-title' [src]="titleImageUrl" alt="title image">
+  </div>
+
+  <div class="col s12 search-container center-align">
+    <form [formGroup]="productForm">
+      <mat-form-field class="tahimsp-searchField">
+        <input #searchTextTypeAhead type="text" matInput placeholder="   Search... " formControlName="productGroup"
+          [matAutocomplete]="autoGroup" (keydown)="searchFieldKeyDown($event)" (focus)="searchFieldKeyDown($event)">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-autocomplete #autoGroup="matAutocomplete">
+          <div class="row">
+            <div class="col l4 m6 s12" *ngFor="let produtGroup of productGroupOptions | async">
+              <mat-optgroup [label]="produtGroup.groupTitle">
+                <mat-option *ngFor="let product of produtGroup.options" [value]="product.label" (click)="onOptionSelected(product.label)">
+                  {{product.label}}
+                </mat-option>
+              </mat-optgroup>
+            </div>
+          </div>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <!-- <input type="text" placeholder="   Search.." name="search" (keyup)="findMatches($event)">
+    <button type="submit"><i class="fa fa-search"></i></button> -->
+  </div>
+  <div class="row" style="height: 100%" infiniteScroll [scrollWindow]="true" [fromRoot]="false"
+    [infiniteScrollDistance]="0" [infiniteScrollUpDistance]="2" [infiniteScrollThrottle]="1000" (scrolled)="onScrollDown($event)"
+    (scrolledUp)="onUp($event)" [infiniteScrollDisabled]="disableScroll">
+    <div class="col l4 m6 s12 tahimsp-card-container" *ngFor="let image of filteredUrlList">
+      <mat-card class="tahimsp-card">
+        <mat-card-header>
+          <mat-card-title>{{image?.label}}</mat-card-title>
+          <mat-card-subtitle>{{image?.label}} in view </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class='tahimsp-poc-core-img' [src]="image.navigationRouteUrl" [attr.alt]="image.navigationRouteUrl">
+        <mat-card-content>
+          <p>
+            {{image?.label}} is a master piece
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Add to Cart</button>
+          <button mat-button>View</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </div>
+
+</section>

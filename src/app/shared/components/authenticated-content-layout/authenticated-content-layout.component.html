@@ -1,0 +1,16 @@
+<section class='authenticated-content-layout'>
+  <div class='row app-header' role='app-header'>
+    <app-matrix-header></app-matrix-header>
+  </div>
+  <div class='row app-body' role='app-content'>
+    <div class="col l1 s12"></div>
+    <div class="col l10 s12 app-body-content">
+      <router-outlet #o="outlet"></router-outlet>
+    </div>
+    <div class="col l1 s12"></div>
+  </div>
+  <div class='row app-footer' role='app-footer'>
+    <app-matrix-footer></app-matrix-footer>
+  </div>
+
+</section>

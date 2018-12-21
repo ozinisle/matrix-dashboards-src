@@ -1,0 +1,26 @@
+<section class="app-poc-landing-page">
+
+  <div class="col l4 m6 s12 poc-card-container" *ngFor="let poc of pocList">
+
+    <mat-card class="poc-card">
+      <mat-card-header>
+        <div mat-card-avatar [class]="['poc-card-header-image',poc.getIconType()].join(' ')" [style.background-image]="getPocCardThumbNailImage(poc)"></div>
+        <mat-card-title>{{poc?.getTitle()}}</mat-card-title>
+        <mat-card-subtitle>{{poc?.getSubTitle()}} </mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image [src]="poc.getImageUrl()" [attr.alt]="poc.getIconType()"> -->
+      <mat-card-content>
+        <p>
+          {{(poc?.getDescription().length>152)? (poc.getDescription() |
+          slice:0:150)+'..':(poc.getDescription())}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Like</button>
+        <button mat-button (click)="openPoc(poc)">View</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+</section>

@@ -1,0 +1,14 @@
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: none !important;
+    height: 0px !important;
+    span {
+        height: 0px !important;
+    }
+}
+
+.mat-form-field-infix {
+    input {
+        margin: 0px;
+        height: 20px;
+    }
+}

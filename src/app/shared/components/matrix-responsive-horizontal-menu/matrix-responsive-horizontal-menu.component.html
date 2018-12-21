@@ -1,0 +1,10 @@
+<section class="app-matrix-responsive-horizontal-menu">
+  <div class="topnav" id="myTopnav">
+    <a *ngFor="let menuItem of topMenuItems; let menuItemIndex=index" (click)="doClick(menuItem,menuItemIndex)" [class]="getMenuItemClass(menuItemIndex)">
+      {{menuItem?.label}}
+    </a>
+    <a class="icon" (click)="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+@import "../../../../assets/styles/_colors.scss";
+.app-matrix-header {
+    height: 120px;
+    border-bottom: 3px solid $app-title-section-separator-color;
+    position: relative;
+    .app-logo {
+        text-align: right;
+        padding-top: 5px;
+        height: 100%;
+        position: relative;
+        img {
+            position: absolute;
+            max-height: 50px;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            margin: auto;
+        }
+    }
+    .app-title {
+        height: 100%;
+        color: $app-title-color;
+        font-size: 30px;
+        position: relative;
+        .app-title-text {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 10px;
+            margin: auto;
+            height: 44px;
+        }
+    }
+    .app-greeting-text {
+        height: 100%;
+        color: $app-title-color;
+        margin: 5px;
+        font-size: 12px;
+        text-align: right;
+        width: 70%
+    }
+    .app-settings-container {
+        height: 100%;
+        color: $app-title-color;
+        margin: 5px;
+        font-size: 12px;
+        a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

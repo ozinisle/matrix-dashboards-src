@@ -1,0 +1,22 @@
+<section class='app-matrix-header' role='app-header'>
+  <div class='col l1 s12'>&nbsp;</div>
+  <div class='col l1 s2 app-logo'>
+    <img src="assets/images/hiTechHomeLogo.png">
+  </div>
+  <div class='col l6 s10 app-title'>
+    <div class='app-title-text'>Matrix Dashboards</div>
+  </div>
+
+  <div class='col s12'>
+    <app-matrix-responsive-horizontal-menu></app-matrix-responsive-horizontal-menu>
+  </div>
+
+  <div class='app-greeting-text left-vertical-center-align-content'>
+    <span *ngIf="authService.currentUserName">Good day,&nbsp;
+      <strong>{{authService.currentUserName}}</strong>
+    </span>
+  </div>
+  <div *ngIf="authService.isUserAuthenticated()" class='app-settings-container right-vertical-center-align-content'>
+    <a (click)="signOut()">Sign out</a>
+  </div>
+</section>

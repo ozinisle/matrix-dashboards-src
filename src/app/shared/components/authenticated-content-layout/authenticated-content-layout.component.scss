@@ -1,0 +1,4 @@
+@import "../../styles/base-layout-styles.scss";
+.authenticated-content-layout {
+    @extend .base-layout
+}

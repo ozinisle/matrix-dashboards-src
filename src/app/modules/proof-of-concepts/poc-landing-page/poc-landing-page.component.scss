@@ -1,0 +1,32 @@
+.app-poc-landing-page {
+    .poc-card-container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        .poc-card {
+            // max-width: 90%;
+            .poc-card-header-image {
+                //background-image: url('assets/images/common-category.png');
+                background-size: cover; // border: 1px solid black;
+                width: 150px;
+                &.performance {
+                    //     background-image: url('assets/images/performance.png');
+                }
+                &.in-future {
+                    height: 71px; //   background-image: url('assets/images/in-future.jpg');
+                }
+            }
+            mat-card-header {
+                margin-bottom: 10px;
+            }
+            .mat-card-content {
+                height: 50px;
+            }
+            .mat-card-header {
+                height: 131px;
+            }
+            ::ng-deep .mat-card-header-text {
+                width: 225px;
+            }
+        }
+    }
+}

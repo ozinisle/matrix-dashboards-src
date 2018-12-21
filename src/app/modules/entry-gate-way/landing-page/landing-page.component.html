@@ -1,0 +1,16 @@
+<section class="app-landing-page">
+  <div class="row">
+
+    <div class="col l4 m6 s12" *ngFor="let link of links">
+      <mat-nav-list>
+        <mat-list-item (click)="openModule(link)">
+          <a matLine>{{ link.label }}</a>
+          <button mat-icon-button>
+            <mat-icon>info</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+
+  </div>
+</section>

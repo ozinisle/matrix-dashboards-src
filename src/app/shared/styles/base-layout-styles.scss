@@ -1,0 +1,9 @@
+@import "../../../assets/styles/_colors.scss";
+.base-layout {
+    .app-footer {
+        .app-footer-content {
+            border-top: 3px solid $app-footer-section-separator-color;
+            height: 100px;
+        }
+    }
+}
