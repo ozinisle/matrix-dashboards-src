@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+// spk/cleanup - added new files
+@import 'assets/fonts/fontawesome-all';
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "assets/styles/_fonts";
+@import "assets/styles/_colors";
+@import "assets/styles/_blue_standards";
+@import "assets/styles/_typography";
+@import 'assets/styles/_utilities';
+body {
+    background-color: #F7F7F7;
+}
