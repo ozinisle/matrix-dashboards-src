@@ -46,3 +46,19 @@ The project was created and structured through the following sequence of command
   ng g m proof-of-concepts --routing
   ng g c poc-landing-page
   ng g m shared-module
+  
+# Release Notes
+
+### v0.1-dec2018 Release notes
+1. added landing page 
+2. added poc module with components namely entry-gate-way, proof-of-concepts and shared module 
+3. added files necessary for implementing basic security like, login component, registration component, jwt related files and associated models/services
+
+### v0.2-jan2019 Release notes
+1. added new html, data, config, images, scripts and styles in assests folder
+2. added new poc components namely, angular-d3-responseice-chart, angular-d3-static-sun-burst, d3-angular, html-web-worker and serve-static-content 
+3. modified poc landing page items with new poc cards
+4. made image name modifications to suit domain serving capabilities
+5. ran an npm update and associated package.json changes were made
+6. added moment-js to package.json and d3.v3.min.js to assets and angular.json
+7. added resolvers and services as necessary to proof-of-concepts module
