@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { POCCardModel } from '../models/poc-card.model';
 import { POCCardModelInterface } from '../models/interfaces/poc-card-models.interface';
-import { PocCardIconType, PocCardType } from '../models/types/proof-of-concepts.types';
+// import { PocCardIconType, PocCardType } from '../models/types/proof-of-concepts.types';
 import { POCConstants } from '../constants/proof-of-concepts.constants';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HTMLLinkPipe } from 'src/app/shared/pipes/htmlUtilityPipes/html-link.pipe';
 
 @Component({
   selector: 'app-poc-landing-page',
@@ -14,26 +15,26 @@ export class PocLandingPageComponent implements OnInit {
 
   public pocList: POCCardModelInterface[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
     try {
 
-      const typeAHeadImageSearchPerformancePocCard: POCCardModel = (new POCCardModel())
-        .setDescription('Proof of speed/performance when loading/searching for image entities while loading 200+ at a time')
-        .setTitle('200+ image load on page load and keyword search')
-        .setsubTitle('Angular7, PHP')
-        .setIconType(PocCardIconType.performance)
-        .setPocUrl(POCConstants.urls.fastImageSearch);
+      const pocConfigList: POCCardModelInterface[] = this.activatedRoute.snapshot.data.pocLandingPageData;
 
-      const futureCards: POCCardModel = (new POCCardModel())
-        .setDescription('Will be added as and when created')
-        .setTitle('Future POC')
-        .setsubTitle('Tech Spec')
-        .setIconType(PocCardIconType.inFuture);
+      pocConfigList.map(pocItem => {
+        this.pocList.push(pocItem);
+      });
 
-      this.pocList = [typeAHeadImageSearchPerformancePocCard, futureCards, futureCards, futureCards, futureCards, futureCards];
+      // const baseHref: string = document.getElementsByTagName('base')[0].href;
+      // const futureCard: POCCardModel = (new POCCardModel())
+      //   .setTitle('Future POC')
+      //   .setsubTitle('Tech Spec')
+      //   .setDescription('Will be added as and when created')
+      //   .setThumbnailImageUrl(`${baseHref}assets/images/in-future.jpg`);
+
+      // this.pocList.push(futureCard);
 
     } catch (exception) {
       console.error(exception);
@@ -44,12 +45,12 @@ export class PocLandingPageComponent implements OnInit {
     this.router.navigateByUrl(poc.getPocUrl());
   }
 
-  public getPocCardThumbNailImage(poc: POCCardModelInterface) {
-    const baseHref: string = document.getElementsByTagName('base')[0].href;
-    if (poc.getIconType() === PocCardIconType.performance) {
-      return `url(${baseHref}assets/images/performance.png)`;
-    } else {
-      return `url(${baseHref}assets/images/in-future.jpg)`;
-    }
+  public getCardContent(poc: POCCardModelInterface) {
+    let descText: string = poc && poc.getDescription && poc.getDescription() ?
+      poc.getDescription() : '';
+
+    descText = (new HTMLLinkPipe()).transform(descText);
+
+    return descText;
   }
 }

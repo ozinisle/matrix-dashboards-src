@@ -48,6 +48,10 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
   public onScrollDown(event) {
     console.log('triggering infinite scroll');
 
+    if (this.imageUrlList.length > 500) {
+      return false;
+    }
+
     this.infiniteScroll.ngOnDestroy();
     this.infiniteScroll.setup();
 
@@ -59,8 +63,15 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
     // this.direction = 'down'
   }
 
-  public onUp(event) {
-
+  public onKeyUp(event) {
+    const _searchText = this.productForm.get('productGroup').value;
+    if (!_searchText || !_searchText.trim()) {
+      if (this.filteredUrlList.length !== this.imageUrlList.length) {
+        this.filteredUrlList = [...this.imageUrlList];
+        this.cdr.detectChanges();
+      }
+      // return filteredProductGroupOptions;
+    }
   }
 
   public searchFieldKeyDown(event) {
@@ -182,21 +193,21 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
   private buildUrlList() {
     let buffer: BaseMenuItemInterface = new BaseMenuItemModal();
     buffer.setLabel('estacy-001')
-      .setNavigationRouteUrl('assets/images/jaypore/estacy-001.jpg');
+      .setNavigationRouteUrl('assets/images/jaypore/estacy0w7m2a1z001.jpg');
     this.imageUrlList.push(buffer);
 
     buffer = null;
     buffer = new BaseMenuItemModal();
     buffer.setLabel('estacy-002')
-      .setNavigationRouteUrl('assets/images/jaypore/estacy-002.jpg');
+      .setNavigationRouteUrl('assets/images/jaypore/estacy0w7m2a1z002.jpg');
     this.imageUrlList.push(buffer);
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
       buffer.setLabel((imgItr === 10) ? 'shirt-010' : 'shirt-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/shirt-010.jpg'
-          : 'assets/images/jaypore/shirt-00' + imgItr + '.jpg');
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/shirt0w7m2a1z010.jpg'
+          : 'assets/images/jaypore/shirt0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
@@ -204,8 +215,8 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
       buffer = null;
       buffer = new BaseMenuItemModal();
       buffer.setLabel((imgItr === 10) ? 'saray-010' : 'saray-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/saray-010.jpg'
-          : 'assets/images/jaypore/saray-00' + imgItr + '.jpg');
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/saray0w7m2a1z010.jpg'
+          : 'assets/images/jaypore/saray0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
@@ -213,8 +224,8 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
       buffer = null;
       buffer = new BaseMenuItemModal();
       buffer.setLabel((imgItr === 10) ? 'pant-010' : 'pant-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/pant-010.jpg'
-          : 'assets/images/jaypore/pant-00' + imgItr + '.jpg');
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/pant0w7m2a1z010.jpg'
+          : 'assets/images/jaypore/pant0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
@@ -222,71 +233,71 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
       buffer = null;
       buffer = new BaseMenuItemModal();
       buffer.setLabel((imgItr === 10) ? 'glove-010' : 'glove-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/glove-010.jpg'
-          : 'assets/images/jaypore/glove-00' + imgItr + '.jpg');
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/glove0w7m2a1z010.jpg'
+          : 'assets/images/jaypore/glove0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '1-shoe-010' : '1-shoe-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/1-shoe-010.jpg' :
-          'assets/images/jaypore/1-shoe-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'shoe-010' : 'shoe-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/10w7m2a1zshoe0w7m2a1z010.jpg' :
+          'assets/images/jaypore/10w7m2a1zshoe0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '2-sandals-010' : '2-sandals-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/2-sandals-010.jpg' :
-          'assets/images/jaypore/2-sandals-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'sandals-010' : 'sandals-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/20w7m2a1zsandals0w7m2a1z010.jpg' :
+          'assets/images/jaypore/20w7m2a1zsandals0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '3-Chudi-010' : '3-Chudi-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/3-Chudi-010.jpg' :
-          'assets/images/jaypore/3-Chudi-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'Chudi-010' : 'Chudi-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/30w7m2a1zChudi0w7m2a1z010.jpg' :
+          'assets/images/jaypore/30w7m2a1zChudi0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '4-hand kerchief-010' : '4-hand kerchief0' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/4-hand kerchief-010.jpg' :
-          'assets/images/jaypore/4-hand kerchief-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'handkerchief-010' : 'handkerchief-0' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/40w7m2a1zhandkerchief0w7m2a1z010.jpg' :
+          'assets/images/jaypore/40w7m2a1zhandkerchief0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '5-belt-010' : '5-belt-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/5-belt-010.jpg' :
-          'assets/images/jaypore/5-belt-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'belt-010' : 'belt-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/50w7m2a1zbelt0w7m2a1z010.jpg' :
+          'assets/images/jaypore/50w7m2a1zbelt0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '6-briefs-010' : '6-briefs-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/6-briefs-010.jpg' :
-          'assets/images/jaypore/6-briefs-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'briefs-010' : 'briefs-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/60w7m2a1zbriefs0w7m2a1z010.jpg' :
+          'assets/images/jaypore/60w7m2a1zbriefs0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
     for (let imgItr = 1; imgItr <= 10; imgItr++) {
       buffer = null;
       buffer = new BaseMenuItemModal();
-      buffer.setLabel((imgItr === 10) ? '7-inner-010' : '7-inner-00' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/7-inner-010.jpg' :
-          'assets/images/jaypore/7-inner-00' + imgItr + '.jpg');
+      buffer.setLabel((imgItr === 10) ? 'inner-010' : 'inner-00' + imgItr)
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/70w7m2a1zinner0w7m2a1z010.jpg' :
+          'assets/images/jaypore/70w7m2a1zinner0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
     }
 
@@ -294,8 +305,8 @@ export class TypeAHeadImageSearchPerformanceComponent implements OnInit {
       buffer = null;
       buffer = new BaseMenuItemModal();
       buffer.setLabel((imgItr === 10) ? 'suit-010' : '0' + imgItr)
-        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/suit-010.jpg' :
-          'assets/images/jaypore/suit-00' + imgItr + '.jpg');
+        .setNavigationRouteUrl((imgItr === 10) ? 'assets/images/jaypore/suit0w7m2a1z010.jpg' :
+          'assets/images/jaypore/suit0w7m2a1z00' + imgItr + '.jpg');
       this.imageUrlList.push(buffer);
 
       this.totalImageCount = this.imageUrlList.length;

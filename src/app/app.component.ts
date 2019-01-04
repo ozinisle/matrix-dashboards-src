@@ -12,10 +12,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Adobe Dynamic Tagging
-    if (environment.baseHref) {
-      const base: HTMLCollectionOf<HTMLBaseElement> = document.getElementsByTagName('base');
-      base[0].href = environment.baseHref;
-    }
+    // if (environment.baseHref) {
+    //   const base: HTMLCollectionOf<HTMLBaseElement> = document.getElementsByTagName('base');
+    //   base[0].href = environment.baseHref;
+    // }
   }
 
 }

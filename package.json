@@ -21,10 +21,12 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "@types/d3": "^5.5.0",
     "core-js": "^2.5.4",
     "crypto-js": "^3.1.9-1",
     "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0",
+    "moment": "^2.23.0",
     "ngx-infinite-scroll": "^6.0.1",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.3.3",
@@ -32,7 +34,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.11.0",
+    "@angular-devkit/build-angular": "^0.11.4",
     "@angular/cli": "~7.1.2",
     "@angular/compiler-cli": "~7.1.0",
     "@angular/language-service": "~7.1.0",

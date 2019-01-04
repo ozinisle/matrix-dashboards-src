@@ -1,0 +1,14 @@
+.app-d3-angluar {
+    /* fix for IE */
+    object {
+        width: 100%;
+    }
+    path {
+        stroke: #fff;
+        fill-rule: evenodd;
+    }
+    text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+    }
+}

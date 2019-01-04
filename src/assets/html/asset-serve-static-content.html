@@ -1,0 +1,59 @@
+<section class="asset-serve-static-content-html">
+
+    <div class="col s12 l6 entity">
+        <h5> External HTML Content Loading</h5>
+        <article>
+            <p>Following method lets you include external html files into your code directly</p>
+
+            <p>1. create your component html with the following code
+                &lt;div [innerHtml]="myTemplate"&gt; &lt;/div&gt;</p>
+
+            <p>2. create your component with the following code. This should do.</p>
+            <p><code><pre>
+    export class ServeStaticContentComponent  {
+
+        public myTemplate: any = '';
+        
+        constructor(private http: HttpClient) {
+            http.get('file.html', 
+                { responseType: 'text' })
+                .toPromise()
+                .then((html: any) 
+                    => this.myTemplate = html);
+        }        
+    }
+        </pre>
+</code></p>
+        </article>
+    </div>
+    <div class="col s12 l6 entity">
+        <h5> Serving Static HTML files through node server</h5>
+
+        <article>
+
+            <p>1. You can use Connect and ServeStatic with Node.js for serving static simple html files via a custom
+                node
+                server</p>
+
+            <p>2. Install connect and serve-static with NPM</p>
+
+            <p>$ npm install connect serve-static</p>
+
+            <p>3. Create server.js file with this content:</p>
+
+            <p>var connect = require('connect');
+                var serveStatic = require('serve-static');
+                connect().use(serveStatic(__dirname)).listen(8080, function(){
+                console.log('Server running on 8080...');
+                });</p>
+
+            <p>4. Run with Node.js</p>
+
+            <p>$ node server.js</p>
+
+            <p>5. You can now go to http://localhost:8080/yourfile.html</p>
+
+        </article>
+    </div>
+
+</section>

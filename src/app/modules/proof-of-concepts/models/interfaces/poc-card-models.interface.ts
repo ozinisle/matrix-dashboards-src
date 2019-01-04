@@ -1,4 +1,4 @@
-import { PocCardType } from '../types/proof-of-concepts.types';
+// import { PocCardType } from '../types/proof-of-concepts.types';
 
 export interface POCCardModelInterface {
     getTitle(): string;
@@ -10,10 +10,8 @@ export interface POCCardModelInterface {
     getDescription(): string;
     setDescription(description: string): POCCardModelInterface;
 
-    getIconType(): PocCardType;
-    setIconType(iconType: PocCardType): POCCardModelInterface;
-
-    getImageUrl(): string;
+    getThumbnailImageUrl(): string;
+    setThumbnailImageUrl(thumbnailImageUrl: string): POCCardModelInterface;
 
     getPocUrl(): string;
     setPocUrl(pocUrl: string): POCCardModelInterface;

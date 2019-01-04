@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { MultiValueFieldComponent } from './components/multi-value-field/multi-value-field.component';
 import { MaterialModule } from './material/material.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HTMLLinkPipe } from './pipes/htmlUtilityPipes/html-link.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     AlertComponent,
     PageNotFoundComponent,
     MultiValueFieldComponent,
+
+    HTMLLinkPipe
   ],
   imports: [
     CommonModule,
@@ -58,7 +61,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatrixResponsiveHorizontalMenuComponent,
     AlertComponent,
     PageNotFoundComponent,
-    MultiValueFieldComponent
+    MultiValueFieldComponent,
+
+    HTMLLinkPipe
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

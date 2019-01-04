@@ -4,15 +4,16 @@
 
     <mat-card class="poc-card">
       <mat-card-header>
-        <div mat-card-avatar [class]="['poc-card-header-image',poc.getIconType()].join(' ')" [style.background-image]="getPocCardThumbNailImage(poc)"></div>
-        <mat-card-title>{{poc?.getTitle()}}</mat-card-title>
-        <mat-card-subtitle>{{poc?.getSubTitle()}} </mat-card-subtitle>
+        <div mat-card-avatar class="poc-card-header-image-container">
+          <img [src]="poc.getThumbnailImageUrl()" class="poc-card-header-image">
+        </div>
+        <mat-card-title>{{poc?.getTitle && poc?.getTitle()}}</mat-card-title>
+        <mat-card-subtitle>{{poc?.getSubTitle && poc?.getSubTitle()}} </mat-card-subtitle>
       </mat-card-header>
       <!-- <img mat-card-image [src]="poc.getImageUrl()" [attr.alt]="poc.getIconType()"> -->
       <mat-card-content>
-        <p>
-          {{(poc?.getDescription().length>152)? (poc.getDescription() |
-          slice:0:150)+'..':(poc.getDescription())}}
+        <p [innerHTML]="getCardContent(poc)">
+
         </p>
       </mat-card-content>
       <mat-card-actions>

@@ -1,0 +1,72 @@
+[
+    {
+        "title": "200+ image load performance test",
+        "subTitle": "Angular7, PHP",
+        "description": "Proof of speed/performance when loading/searching for image entities while loading 200+ at a time",
+        "thumbnailImageUrl": "assets/images/performance.png",
+        "pocUrl": "/poc/fast-image-search"
+    },
+    {
+        "title": "Infinite Scroll",
+        "subTitle": "Angular7",
+        "description": "Sample infinite scroll implementation with ngx-infinite-scroll",
+        "thumbnailImageUrl": "assets/images/infiniteScroll.png",
+        "pocUrl": "/poc/fast-image-search"
+    },
+    {
+        "title": "HTML5 WebWorker in Angular",
+        "subTitle": "Angular7, HTML5-Web Worker",
+        "description": "Proof that HTML5 web workers work in Angular",
+        "thumbnailImageUrl": "assets/images/html5WebWorker.jpg",
+        "pocUrl": "/poc/html-web-worker"
+    },
+    {
+        "title": "D3Chart integration in Angular",
+        "subTitle": "Angular7, D3JS",
+        "description": "Integration method enabling Static D3 charts in Angular",
+        "thumbnailImageUrl": "assets/images/d3JSLogo.jpg",
+        "pocUrl": "/poc/d3-static-chart"
+    },
+    {
+        "title": "D3 Interactive Charts in Angular",
+        "subTitle": "Angular7, D3JS",
+        "description": "Dynamic interactive zoomable sunburst chart. Use this as reference to create the same [[scal-svg,https://css-tricks.com/scale-svg/]]",
+        "thumbnailImageUrl": "assets/images/d3JSLogo.jpg",
+        "pocUrl": "/poc/d3-dynamic-chart"
+    },
+    {
+        "title": "D3 Responsive Charts in Angular",
+        "subTitle": "Angular7, D3JS",
+        "description": "Interactive and Responsive zoomable sunburst chart. References [[scal-svg,https://css-tricks.com/scale-svg/]] and [[responsive-d3,https://brendansudol.com/writing/responsive-d3]]",
+        "thumbnailImageUrl": "assets/images/d3JSLogo.jpg",
+        "pocUrl": "/poc/d3-responsive-chart"
+    },
+    {
+        "title": "Import external html content Angular",
+        "subTitle": "HTML, Angular",
+        "description": "Illustrates that importing external html page into say a div tag is possible",
+        "thumbnailImageUrl": "assets/images/externalLinks.jpg",
+        "pocUrl": "/poc/serve-static-html-content"
+    },
+    {
+        "title": "Static HTML Server",
+        "subTitle": "HTML, JS, NodeJS",
+        "description": "Will be added as and when created",
+        "thumbnailImageUrl": "assets/images/serveStaticContent.jpg",
+        "pocUrl": "/poc/serve-static-html-content"
+    },
+    {
+        "title": "Future POC - JSON Server",
+        "subTitle": "Tech Spec",
+        "description": "Will be added as and when created",
+        "thumbnailImageUrl": "assets/images/in-future.jpg",
+        "pocUrl": ""
+    },
+    {
+        "title": "Future POC",
+        "subTitle": "Tech Spec",
+        "description": "Will be added as and when created",
+        "thumbnailImageUrl": "assets/images/in-future.jpg",
+        "pocUrl": ""
+    }
+]

@@ -29,7 +29,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/materialize-css/dist/js/materialize.js"
+              "node_modules/materialize-css/dist/js/materialize.js",
+              "src/assets/scripts/js/d3.v3.min.js"
             ]
           },
           "configurations": {
@@ -97,7 +98,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [
-              "node_modules/materialize-css/dist/js/materialize.js"
+              "node_modules/materialize-css/dist/js/materialize.js",
+              "src/assets/scripts/js/d3.v3.min.js"
             ],
             "styles": [
               {

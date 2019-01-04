@@ -12,7 +12,8 @@
     <form [formGroup]="productForm">
       <mat-form-field class="tahimsp-searchField">
         <input #searchTextTypeAhead type="text" matInput placeholder="   Search... " formControlName="productGroup"
-          [matAutocomplete]="autoGroup" (keydown)="searchFieldKeyDown($event)" (focus)="searchFieldKeyDown($event)">
+          [matAutocomplete]="autoGroup" (keydown)="searchFieldKeyDown($event)" (focus)="searchFieldKeyDown($event)"
+          (keyup)="onKeyUp($event)">
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         <mat-autocomplete #autoGroup="matAutocomplete">
           <div class="row">
@@ -32,7 +33,7 @@
   </div>
   <div class="row" style="height: 100%" infiniteScroll [scrollWindow]="true" [fromRoot]="false"
     [infiniteScrollDistance]="0" [infiniteScrollUpDistance]="2" [infiniteScrollThrottle]="1000" (scrolled)="onScrollDown($event)"
-    (scrolledUp)="onUp($event)" [infiniteScrollDisabled]="disableScroll">
+    [infiniteScrollDisabled]="disableScroll">
     <div class="col l4 m6 s12 tahimsp-card-container" *ngFor="let image of filteredUrlList">
       <mat-card class="tahimsp-card">
         <mat-card-header>
